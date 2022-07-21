@@ -24,7 +24,7 @@ export default function App(){
                 <img src = "./img/image 1.png"/>
                 <h1>ZapRecall</h1>
                 <button onClick={()=> setTela(false)}>Iniciar Recall!</button>
-            </div>):
+            </div>) :
             <Tela2 deck={deck}/>
             }
         </div>
