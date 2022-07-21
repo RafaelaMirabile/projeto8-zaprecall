@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: #FB6B6B;
+    margin: 0px;
+}
+.tela-inicial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+.tela-inicial img{
+    width: 136px;
+    height: 161px;
+}
+.tela-inicial button{
+    width: 246px;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    font-family: 'Recursive'; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #D70900;
+}
+.tela-inicial button:hover{
+    cursor: pointer;
+}
+h1{
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;text-align: center;
+    letter-spacing: -0.012em;
+    color: #FFFFFF;
+    margin: 20px 0 30px 0;
+}
+.tela-2 > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid green;
+}
+.tela-2 img{
+    width: 52px;
+    height: 60px;
+    margin-right: 10px;
+}
+.card{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    width: 300px;
+    height: 65px;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    border: 5px solid orange;
+    align-items: center;
+    padding: 10px;
+}
+p{
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+.flashCards{
+    display: flex;
+    flex-direction: column;
+}
+.card ion-icon{
+    font-size: 24px;
+}
