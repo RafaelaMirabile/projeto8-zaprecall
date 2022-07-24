@@ -1,21 +1,39 @@
-import React from "react";
+import React,{useState} from "react";
 
-export default function Resposta(deck){
-    
+export default function FlashCard({deck, addAnswerStatus}){
+    console.log(deck)
+
     const[selecionado, setEscolha]= React.useState(true);
     const[cor,setCor]= React.useState("");
     const[icon, setIcon]=React.useState("");
  
 
     function updateResposta(status){
-        addStatus(status);
+        addAnswerStatus(status);
    }
+    
+    const [flip, setFlip] = useState(true);
+    const [resposta1, setResposta]= React.useState(true);
 
     return(
-        <>
-        {selecionado ? 
+        <div className={`card ${flip ? `flip` : ''}`} 
+        >
+            {flip ? 
+            <div className="back" onClick={()=> setFlip(!flip)}>
+                <p>Pergunta</p>
+                <ion-icon name="play-outline"></ion-icon>
+            </div> : 
+                 <div className="front">
+                 {resposta1 ?
+                 <div>
+                     <div>{deck.pergunta}</div>
+                     <ion-icon name="repeat-outline" onClick={()=> setResposta(!resposta1)} ></ion-icon> 
+                 </div>
+                     :
+                      <div>
+                                 {selecionado ? 
         <div>
-                {deck.deck.resposta}
+                {deck.resposta}
             <div className="botoes" onClick={()=> {
                 setEscolha(!selecionado);
                 }}>
@@ -52,13 +70,14 @@ export default function Resposta(deck){
         <p className={cor}>Pergunta</p>
         <ion-icon name={icon}></ion-icon>
         </>
-      }
-    </>
-    );
+      } 
+                     </div>}
+     
+             </div>
+            }
+        </div>
+    )
 }
-
-
-
 
 
 

@@ -1,8 +1,5 @@
-
-
-export default function IonIcon(props) {
+export default function Status(props) {
     const {status} = props;
-
 
     switch (status) {
         case "opcaoVermelha":

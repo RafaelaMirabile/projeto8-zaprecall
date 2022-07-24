@@ -1,22 +1,61 @@
-import FlashcardsList from "./FlashcardsList"
-import Resultado from "./Resultado"
+import FlashCard from "./Flashcard"
+import Status from "./Status";
+import React from "react";
 
 
 export default function Tela2({deck}){
+    console.log(deck);
 
-    
+    function addAnswerStatus(status) {
+        setAnswersStatus([...answersStatus, status]);
+    }
 
-    
+    const [answersStatus, setAnswersStatus] = React.useState([]);
+
     return (
-    
-    
     <div className="tela-2">
         <div className="logo">
             <img src = "./img/image 1.png"/>
             <h1>ZapRecall</h1>
         </div>
-        <FlashcardsList deck={deck}/>
-        <Resultado deck = {deck}/>
+        <div className="flashCards">
+            
+            {deck.map((deck,index) => (
+                <FlashCard deck={deck} key={index} addAnswerStatus={addAnswerStatus} />
+            ))}     
+        </div>
+        <Resultado deck ={deck} answersStatus={answersStatus} />
     </div>    
+    )
+}
+
+function Resultado({deck,answersStatus}){
+    
+    const zapCounter = answersStatus.filter(status => status === "opcaoVermelha");
+    console.log(zapCounter);
+    const Resultado = answersStatus.length === deck.length;
+    const Counter = zapCounter.length < 1;
+
+   
+
+    return(
+        <footer>
+            <div className={Resultado ? "result" : "display"}>
+                {!Counter ? <div>
+                    <img src="./img/sad 7.png" alt=""></img>
+                    <div>Ainda faltam alguns...Mas não desanime!</div> 
+                    </div> 
+                : 
+                <div>
+                    <img src="./img/party 2.png" alt=""></img>
+                    <div>Você não esqueceu de nenhum flashcard!</div>
+
+                </div>
+
+                }
+            </div>
+           {answersStatus.length}/{deck.length} CONCLUÍDOS
+           {answersStatus.map((status, index) => <Status key={index} status={status} />)}
+        </footer>
     )
 }
