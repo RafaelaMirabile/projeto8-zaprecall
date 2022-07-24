@@ -58,7 +58,7 @@ h1{
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     width: 300px;
-    height: 65px;
+    min-height: 100px;
     margin-bottom: 6px;
     display: flex;
     border: 5px solid orange;
@@ -87,6 +87,9 @@ p{
     display: flex;
     flex-direction: column;
     border: 2px solid purple;
+    height: 400px;
+    overflow-y: scroll;
+    padding-top: 430px;
 }
 .logo{
     justify-content: center;
@@ -115,4 +118,70 @@ p{
     align-items: center;
     justify-content: center;
 
+}
+.opcao{
+    width: 85.17px;
+    height: 37.17px;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 4px;
+}
+.botoes{
+    display: flex;
+    padding: 2px;
+    margin-top: 10px;
+}
+.opcao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.opcao.vermelho{
+    background: #FF3030;
+    border: 5px;
+}
+.opcao.laranja{
+    background: #FF922E;
+    border: 5px;
+}
+.opcao.verde{
+    background: #2FBE34;
+    border: 5px;
+}
+
+.vermelho-selecionado{
+    color: #FF3030;
+    text-decoration: line-through;
+}
+.laranja-selecionado{
+    color: #FF922E;
+    text-decoration: line-through;
+
+}
+.verde-selecionado{
+color: #2FBE34;
+text-decoration: line-through;
+}
+footer{
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
 }

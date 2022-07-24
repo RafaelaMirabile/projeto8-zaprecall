@@ -1,26 +1,17 @@
 
-import FlashCardPergunta from "./FlashcardPergunta";
-import FlashCard from "./FlashcardPergunta";
+import FlashCardBack from "./FlashcardBack";
 
 
 export default function FlashcardsList({deck}){
-
-
-
-    return(
-<div className="flashCards">
     
-    {deck.map(deck => (
-        <FlashCardPergunta deck={deck} key={deck.id}/>
-    ))}
-
-</div>
-
-    );
-
+    
+    return(
+        <div className="flashCards">
+            
+            {deck.map((deck,index) => (
+                <FlashCardBack deck={deck} key={index}/>
+            ))}
+        </div>
+        
+            );
 }
-
-
-
-
-
