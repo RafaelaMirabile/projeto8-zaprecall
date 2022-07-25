@@ -6,7 +6,7 @@ export default function App(){
     
     const [tela, setTela] = React.useState(true);
 
-    const deck =[
+    let deck =[
     {id:1, pergunta:"O que é JSX?", resposta:"Uma extensão de linguagem do JavaScript"},
     {id:2, pergunta:"O React é __ ", resposta:"uma biblioteca JavaScript para construção de interfaces"},
     {id:3,pergunta:"Componentes devem iniciar com __", resposta:"letra maiúscula"},
@@ -16,6 +16,8 @@ export default function App(){
     {id:7,pergunta:"Usamos props para __", resposta:"passar diferentes informações para componentes"},
     {id:8,pergunta:"Usamos estado (state) para __ ", resposta:"dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
 ];
+
+    deck = deck.sort(()=>Math.random() - 0.5);
     
     return(
         <div>

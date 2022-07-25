@@ -2,15 +2,13 @@ import FlashCard from "./Flashcard"
 import Status from "./Status";
 import React from "react";
 
-
 export default function Tela2({deck}){
-    console.log(deck);
+    
+    const [answersStatus, setAnswersStatus] = React.useState([]);
 
     function addAnswerStatus(status) {
         setAnswersStatus([...answersStatus, status]);
     }
-
-    const [answersStatus, setAnswersStatus] = React.useState([]);
 
     return (
     <div className="tela-2">
@@ -21,7 +19,7 @@ export default function Tela2({deck}){
         <div className="flashCards">
             
             {deck.map((deck,index) => (
-                <FlashCard deck={deck} key={index} addAnswerStatus={addAnswerStatus} />
+                <FlashCard deck={deck} key={index} addAnswerStatus={addAnswerStatus} index={index}/>
             ))}     
         </div>
         <Resultado deck ={deck} answersStatus={answersStatus} />
@@ -32,11 +30,8 @@ export default function Tela2({deck}){
 function Resultado({deck,answersStatus}){
     
     const zapCounter = answersStatus.filter(status => status === "opcaoVermelha");
-    console.log(zapCounter);
     const Resultado = answersStatus.length === deck.length;
     const Counter = zapCounter.length < 1;
-
-   
 
     return(
         <footer>
@@ -51,7 +46,6 @@ function Resultado({deck,answersStatus}){
                     <div>Você não esqueceu de nenhum flashcard!</div>
 
                 </div>
-
                 }
             </div>
            {answersStatus.length}/{deck.length} CONCLUÍDOS
