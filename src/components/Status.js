@@ -3,11 +3,11 @@ export default function Status(props) {
 
     switch (status) {
         case "opcaoVermelha":
-            return <ion-icon name="close-circle"></ion-icon>;
+            return <img src ="./img/Vectorvermelho.png"className="status"/>;
         case "opcaoLaranja":
-            return <ion-icon name="help-circle"></ion-icon>;
+            return <img src ="./img/Vector (2).png"className="status"/>;
         case "opcaoVerde":
-            return <ion-icon name="checkmark-circle"></ion-icon>;
+            return <img src ="./img/Vectorverde (1).png"className="status"/>;
         default:
             return null;
     }

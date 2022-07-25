@@ -36,20 +36,25 @@ function Resultado({deck,answersStatus}){
     return(
         <footer>
             <div className={Resultado ? "result" : "display"}>
-                {!Counter ? <div>
+                {!Counter ? <div className="resultado">
+                    <span>
                     <img src="./img/sad 7.png" alt=""></img>
+                    <span>Putz..</span>
+                    </span>
                     <div>Ainda faltam alguns...Mas não desanime!</div> 
                     </div> 
                 : 
-                <div>
+                <div className="resultado" >
+                    <span>
                     <img src="./img/party 2.png" alt=""></img>
+                    <span>Parabéns!</span>
+                    </span>
                     <div>Você não esqueceu de nenhum flashcard!</div>
-
                 </div>
                 }
             </div>
            {answersStatus.length}/{deck.length} CONCLUÍDOS
-           {answersStatus.map((status, index) => <Status key={index} status={status} />)}
+           <div className="icones">{answersStatus.map((status, index) =><Status key={index} status={status} /> )}</div>
         </footer>
     )
 }

@@ -19,13 +19,15 @@ export default function FlashCard({deck, addAnswerStatus, index}){
             {flip ? 
             <div className="back" onClick={()=> setFlip(!flip)}>
                 <p>Pergunta {index+1} </p>
-                <ion-icon name="play-outline"></ion-icon>
+                <ion-icon className="play" name="play-outline"></ion-icon>
             </div> : 
                  <div className="front">
                  {resposta1 ?
-                 <div>
+                 <div className="deckPergunta">
+                 
                      <div>{deck.pergunta}</div>
-                     <ion-icon name="repeat-outline" onClick={()=> setResposta(!resposta1)} ></ion-icon> 
+                 
+                 <img className="vector" onClick={()=> setResposta(!resposta1)} src="./img/Vector.png"/>
                  </div>
                      :
                       <div>
@@ -34,22 +36,23 @@ export default function FlashCard({deck, addAnswerStatus, index}){
                                 
                                     {deck.resposta}
                                     <div className="botoes" onClick={()=> {setEscolha(!selecionado);}}>
-                                        <button onClick={()=>{setCor("vermelho-selecionado");setIcon("close-circle-outline");updateResposta("opcaoVermelha"); }} className="opcao vermelho">
+                                        <button onClick={()=>{setCor("vermelho-selecionado");setIcon("close-circle");updateResposta("opcaoVermelha"); }} className="opcao vermelho">
                                             Não lembrei
                                         </button>
-                                        <button onClick={()=> {setCor("laranja-selecionado"); setIcon("help-circle-outline");updateResposta("opcaoLaranja");}} className="opcao laranja">
+                                        <button onClick={()=> {setCor("laranja-selecionado"); setIcon("help-circle");updateResposta("opcaoLaranja");}} className="opcao laranja">
                                             Quase não lembrei
                                         </button>
-                                        <button onClick={()=> {setCor("verde-selecionado");setIcon("checkmark-circle-outline");updateResposta("opcaoVerde");}} className="opcao verde">
+                                        <button onClick={()=> {setCor("verde-selecionado");setIcon("checkmark-circle");updateResposta("opcaoVerde");}} className="opcao verde">
                                             Zap!
                                         </button>
                                     </div> 
                                 </div> :
-                                <>
+                                <div className="frontface">
                                     <p className={cor}>Pergunta{index+1}</p>
-                                    <ion-icon name={icon}></ion-icon>
-                                </>
-                                }</div>}</div>}</div>)
+                                   <div className={cor}><ion-icon name={icon}></ion-icon></div>
+                                    </div>
+                                }</div>}</div>}</div>
+)
 }
 
 

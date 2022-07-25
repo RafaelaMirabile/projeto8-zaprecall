@@ -31,7 +31,7 @@ export default function Resposta(deck){
                 </div> :
                         <>
                             <p className={cor}>Pergunta</p>
-                            <ion-icon name={icon}></ion-icon>
+                            <ion-icon className ={cor} name={icon}></ion-icon>
                         </>
         }
     </>
