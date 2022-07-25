@@ -237,7 +237,6 @@ footer{
     margin-right: 120px;
 }
 .deckPergunta{
-    border: 2px solid salmon;
     display: flex;
     min-width: 270px;
     justify-content: space-between;
@@ -245,7 +244,5 @@ footer{
 .vector{
     width: 30px;
     height: 20px;
-    border: 2px solid green;
     margin-left: 40px;
-
 }
